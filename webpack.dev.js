@@ -45,7 +45,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.join(__dirname, 'src/index/index.html'),
+            template: path.join(__dirname, 'src/index/index1.html'),
             filename: 'index.html',
             chunks: ['index'],
             inject: true,
@@ -59,7 +59,7 @@ module.exports = {
             }
         }),
         new HtmlWebpackPlugin({
-            template: path.join(__dirname, 'src/search/search.html'),
+            template: path.join(__dirname, 'src/search/index2.html'),
             filename: 'search.html',
             chunks: ['search'],
             inject: true,
