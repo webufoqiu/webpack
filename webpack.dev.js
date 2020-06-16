@@ -1,0 +1,21 @@
+'use strict';
+const path=require('path');
+module.exports = {
+    entry: {
+        index: './src/index/index1.js',
+        search: './src/search/index2.js'
+    },
+    output: {
+        path: path.join(__dirname,'dist'),
+        filename: '[name].js'
+    },
+    mode: 'development',
+    module: {
+        rules: [
+            {
+                test: /.js$/ ,
+                use: 'babel-loader'
+            }
+        ]
+    }
+}
