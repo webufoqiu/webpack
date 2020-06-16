@@ -1,15 +1,49 @@
 'use strict';
 const path=require('path');
+const glob = require('glob');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
+const setMPA = () => {
+    const entry = {};
+    const HtmlWebpackPlugins = [];
+    const entryFiles = glob.sync(path.join(__dirname, './src/*/index.js'));
+    Object.keys(entryFiles).map( (index) => {
+            const entryFile = entryFiles[index];
+            const match1 = entryFile.match(/src\/(.*)\/index\.js/);
+            const pageName = match1 && match1[1];
+            console.log(pageName);
+            entry[pageName] = entryFile;
+            HtmlWebpackPlugins.push(
+                new HtmlWebpackPlugin({
+                    template: path.join(__dirname, `src/${pageName}/index.html`),
+                    filename: `${pageName}.html`,
+                    chunks: [pageName],
+                    inject: true,
+                    minify: {
+                        html5: true,
+                        collapseWhitespace: true,
+                        preserveLineBreaks: false,
+                        minifyCSS: true,
+                        minifyJS: true,
+                        removeComments: false
+                    }
+                })
+            );
+        });
+    return {
+        entry,
+        HtmlWebpackPlugins
+    }
+}
+
+const { entry, HtmlWebpackPlugins }= setMPA();
 
 module.exports = {
-    entry: {
-        index: './src/index/index1.js',
-        search: './src/search/index2.js'
-    },
+    entry: entry,
     output: {
         path: path.join(__dirname,'dist'),
-        filename: '[name].js'
+        filename: '[name]_[chunkhash:6].js'
     },
     mode: 'development',
     module: {
@@ -44,33 +78,6 @@ module.exports = {
         ]
     },
     plugins: [
-        new HtmlWebpackPlugin({
-            template: path.join(__dirname, 'src/index/index1.html'),
-            filename: 'index.html',
-            chunks: ['index'],
-            inject: true,
-            minify: {
-                html5: true,
-                collapseWhitespace: true,
-                preserveLineBreaks: false,
-                minifyCSS: true,
-                minifyJS: true,
-                removeComments: false
-            }
-        }),
-        new HtmlWebpackPlugin({
-            template: path.join(__dirname, 'src/search/index2.html'),
-            filename: 'search.html',
-            chunks: ['search'],
-            inject: true,
-            minify: {
-                html5: true,
-                collapseWhitespace: true,
-                preserveLineBreaks: false,
-                minifyCSS: true,
-                minifyJS: true,
-                removeComments: false
-            }
-        })  
-    ]
+        new CleanWebpackPlugin()
+    ].concat(HtmlWebpackPlugins)
 }

@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/search/index2.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index/index.js");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -156,39 +156,39 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 
 /***/ }),
 
-/***/ "./src/images/logo.gif":
-/*!*****************************!*\
-  !*** ./src/images/logo.gif ***!
-  \*****************************/
+/***/ "./src/images/logo1.png":
+/*!******************************!*\
+  !*** ./src/images/logo1.png ***!
+  \******************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"374d59cfcc389707c30c5b40c6b58cf5.gif\");\n\n//# sourceURL=webpack:///./src/images/logo.gif?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"27cf09479c07d2b14b27d599e1a974c4.png\");\n\n//# sourceURL=webpack:///./src/images/logo1.png?");
 
 /***/ }),
 
-/***/ "./src/search/index2.js":
-/*!******************************!*\
-  !*** ./src/search/index2.js ***!
-  \******************************/
+/***/ "./src/index/helloworld.js":
+/*!*********************************!*\
+  !*** ./src/index/helloworld.js ***!
+  \*********************************/
+/*! exports provided: helloworld */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"helloworld\", function() { return helloworld; });\nfunction helloworld() {\n  return '挺好的~~Hello,Webpack~~~~';\n}\n\n//# sourceURL=webpack:///./src/index/helloworld.js?");
+
+/***/ }),
+
+/***/ "./src/index/index.js":
+/*!****************************!*\
+  !*** ./src/index/index.js ***!
+  \****************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _search__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./search */ \"./src/search/search.js\");\n/* harmony import */ var _css_main_less__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../css/main.less */ \"./src/css/main.less\");\n/* harmony import */ var _css_main_less__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_main_less__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _images_logo_gif__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../images/logo.gif */ \"./src/images/logo.gif\");\n\n\n\nvar txt1 = document.createElement(\"div\");\ntxt1.className = 'main-text';\ntxt1.innerHTML = Object(_search__WEBPACK_IMPORTED_MODULE_0__[\"search\"])();\ndocument.body.appendChild(txt1);\nvar img1 = document.createElement(\"img\");\nimg1.src = _images_logo_gif__WEBPACK_IMPORTED_MODULE_2__[\"default\"];\ndocument.body.appendChild(img1);\n\n//# sourceURL=webpack:///./src/search/index2.js?");
-
-/***/ }),
-
-/***/ "./src/search/search.js":
-/*!******************************!*\
-  !*** ./src/search/search.js ***!
-  \******************************/
-/*! exports provided: search */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"search\", function() { return search; });\nfunction search() {\n  return '~搜索页~Hello,Webpack~~~~搜索页~~~';\n}\n\n//# sourceURL=webpack:///./src/search/search.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _helloworld__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./helloworld */ \"./src/index/helloworld.js\");\n/* harmony import */ var _css_main_less__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../css/main.less */ \"./src/css/main.less\");\n/* harmony import */ var _css_main_less__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_main_less__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _images_logo1_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../images/logo1.png */ \"./src/images/logo1.png\");\n\n\n\nvar txt1 = document.createElement(\"div\");\ntxt1.className = 'main-text';\ntxt1.innerHTML = Object(_helloworld__WEBPACK_IMPORTED_MODULE_0__[\"helloworld\"])();\ndocument.body.appendChild(txt1);\nvar img1 = document.createElement(\"img\");\nimg1.src = _images_logo1_png__WEBPACK_IMPORTED_MODULE_2__[\"default\"];\ndocument.body.appendChild(img1);\n\n//# sourceURL=webpack:///./src/index/index.js?");
 
 /***/ })
 
