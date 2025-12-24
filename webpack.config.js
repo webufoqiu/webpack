@@ -5,5 +5,14 @@ module.exports = {
     output: {
         path: path.join(__dirname,'dist'),
         filename: 'bundle.js'
+    },
+    mode: 'production',
+    module: {
+        rules: [
+            {
+                test: /.js$/ ,
+                use: 'babel-loader'
+            }
+        ]
     }
 }
